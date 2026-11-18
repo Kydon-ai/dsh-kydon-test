@@ -16,6 +16,7 @@
 $DSH_ROOT = 'E:\projectWorkspace\dsh_dev\deepseek-harness'
 $PLUGIN_PATH = 'E:\projectWorkspace\dsh_dev\plugins\dsh-kydon-test'
 ~~~
+> 如果复现的话，请替换为你实际的目录！
 
 目录关系：
 
@@ -51,11 +52,10 @@ pnpm init 会创建 package.json。初期可以整理为：
 {
   "name": "@kydon/dsh-kydon-test",
   "version": "0.0.1",
-  "description": "用于学习 DSH 插件开发的示例插件",
-  "type": "module",
-  "scripts": {}
+  "description": "测试的第一个插件",
 }
 ~~~
+> 其他的保持默认配置即可
 
 name 是 npm 包名，发布前要确认名称可用；version 是包版本；type: "module" 表示使用 ES Module。构建入口和 DSH 元数据会在后续加入。
 
@@ -68,8 +68,7 @@ dsh-kydon-test/
 ├── package.json
 ├── src/
 │   └── index.ts
-├── cordis.yml
-└── README_jioaxue.md
+└── cordis.yml
 ~~~
 
 ## 3. 创建最小 Host 插件
@@ -435,6 +434,8 @@ export function DemoIcon({ size }: PropsRuntime<'sidebar.panellist'>) {
 
 DemoSettings 和 DemoBundleConfig 使用不同的 PropsRuntime 类型，因为它们注册到不同的 UI slot。一个 slot 的组件类型不能直接替代另一个 slot 的组件类型。
 
+> 我这里没有实际使用DemoBundleConfig，而是复用了DemoSettings，不过原理上没啥区别，照着写也可以
+
 ### 7.4 创建浏览器侧插件入口
 
 创建 src/client/index.ts：
@@ -547,6 +548,8 @@ export default clientBundle(import.meta.dirname, ['lib/types/index.js'])
 
 这里的导入路径相对于 tsdown.config.ts 所在目录。该构建配置依赖同一工作区中的 DSH 源码，因此本教程的构建命令应在 PLUGIN_PATH 所在工作区中执行。
 
+> 生成了一套能够分别构建 Host 和 Client 的配置，是一种典型的构建配置抽象
+
 ### 7.6 构建客户端代码
 
 在 PLUGIN_PATH 执行：
@@ -616,6 +619,8 @@ pnpm dsh web --patch ..\plugins\dsh-kydon-test\cordis.yml --no-open
 - cordis.bundle.yml 使用包名，作为可安装组合包的配置层。
 
 浏览器侧入口从包名对应的插件行加载。仅以 ./src/index.ts 加载 Host 源码，不会自动替代已构建的客户端包入口。
+
+> cordis.bundle.yml 专门用来配置dsh.bundle.patch属性，和本地调试的yml配置区分开来
 
 ### 8.3 将本地组合包安装到 web profile
 
