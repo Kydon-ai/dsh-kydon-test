@@ -1,0 +1,10 @@
+{
+  "extends": "../../deepseek-harness/tsconfig.base.client.json",
+  "compilerOptions": {
+    "paths": {},
+    "rootDir": "src",
+    "outDir": "lib/types",
+    "tsBuildInfoFile": "lib/tsconfig.client.tsbuildinfo"
+  },
+  "include": ["src/client"]
+}

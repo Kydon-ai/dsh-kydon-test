@@ -1,0 +1,10 @@
+{
+  "extends": "../../deepseek-harness/tsconfig.base.json",
+  "compilerOptions": {
+    "paths": {},
+    "rootDir": "src",
+    "outDir": "lib/types",
+    "tsBuildInfoFile": "lib/tsconfig.host.tsbuildinfo"
+  },
+  "files": ["src/index.ts"]
+}

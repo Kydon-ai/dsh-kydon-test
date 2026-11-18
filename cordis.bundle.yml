@@ -1,0 +1,3 @@
+- insert:
+    - id: dsh-kydon-test
+      name: '@kydon/dsh-kydon-test'
