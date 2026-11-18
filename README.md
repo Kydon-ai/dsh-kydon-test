@@ -410,5 +410,5 @@ pnpm login
 pnpm whoami
 # 可选的版本号更新
 # pnpm version patch
-pnpm publish
+pnpm publish --access public 
 ```
