@@ -1,6 +1,6 @@
 {
   "name": "@kydon/dsh-kydon-test",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "测试的第一个插件",
   "main": "./lib/index.js",
   "types": "./lib/types/index.d.ts",
