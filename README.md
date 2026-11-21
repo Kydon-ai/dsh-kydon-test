@@ -42,7 +42,7 @@ dsh_dev/
         ├── README.md
         └── uv.lock
 ```
-```
+
 ## 具体步骤
 
 git init
@@ -422,4 +422,4 @@ pnpm whoami
 pnpm publish --access public 
 ```
 
-> 此文档为原始记录，AI优化的文档请参见(此文档)[./README_jioaxue.md]
+> 此文档为原始记录，AI优化的文档请参见 [此文档](./README_jioaxue.md)
