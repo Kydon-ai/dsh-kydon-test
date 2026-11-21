@@ -646,6 +646,12 @@ pnpm dsh web --no-open
 
 这条路径会根据 dsh.bundle 声明加载组合包 patch，并使用包的 ./client 导出加载浏览器 UI。使用 profile 安装方式测试时，不要再同时通过 --patch cordis.yml 插入同一个插件，否则可能出现重复配置行。
 
+额外地，你也可以直接从本地目录安装。前提得配置好dsh.bundle.patch配置文件。最终效果就像这样：
+
+![](https://oss.qidong.tech/resize/640/prod/2026/11/18/20261118235112991_529a5617fbfe205a7d3a9f904a999e5d.png)
+
+
+
 ## 9. 发布到 npm
 
 ### 9.1 配置 .gitignore

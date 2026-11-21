@@ -389,6 +389,15 @@ ctx.slots.inject('plugins.bundle.config', () => ctx.slots.register({
 }, DemoSettings))
 ```
 
+然后在dsh_devplugins/dsh-kydon-bilibili/目录打包
+```shell
+pnpm bundle
+```
+然后在dsh_dev/deepseek-harness/目录进行运行
+
+```shell
+pnpm dsh web  --patch ..\plugins\dsh-kydon-test\cordis.yml --no-open
+```
 
 重新bundle之后运行没有问题，我们就开始打包发布到npm
 首先添加.gitignore文件：
@@ -412,3 +421,5 @@ pnpm whoami
 # pnpm version patch
 pnpm publish --access public 
 ```
+
+> 此文档为原始记录，AI优化的文档请参见(此文档)[./README_jioaxue.md]
